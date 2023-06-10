@@ -1,19 +1,19 @@
 function y = mkArtEIT(K, loc)
     switch(loc)
         case 'heart'
-            load('..\crsArts\heartCRS.mat','heart');
-            y = K * heart;
+            load('eitArts\heartCRS.mat','heart');
+            y = K * normalize(heart,"range");
         case 'lung'
-            load('..\crsArts\lungCRS.mat','lung');
-            y = K * lung;
+            load('eitArts\lungCRS.mat','lung');
+            y = K * normalize(lung,"range");
         case 'trans'
-            load('..\crsArts\transCRS.mat','trans');
-            y = K * trans;
+            load('eitArts\transCRS.mat','trans');
+            y = K * normalize(trans,"range");
         case 'center'
-            load('..\crsArts\centerCRS.mat','center');
-            y = K * center;
+            load('eitArts\centerCRS.mat','center');
+            y = K * normalize(center,"range");
         otherwise
-            load('..\crsArts\heartCRS.mat','heart');
-            y = K * heart;
+            load('eitArts\heartCRS.mat','heart');
+            y = K * normalize(heart,"range");
     end
 end
